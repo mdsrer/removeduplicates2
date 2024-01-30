@@ -34,5 +34,5 @@ def upload():
     # Return the modified Excel file for download
     return send_file(output_file, as_attachment=True)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
