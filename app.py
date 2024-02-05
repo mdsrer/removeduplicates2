@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index_d.html')
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -17,7 +17,7 @@ def upload():
     file2 = request.files['file2']
 
     if file1.filename == '':
-        return render_template('index_d.html', alert_message="Please select at least 1 file to upload.")
+        return render_template('index.html', alert_message="Please select at least 1 file to upload.")
     
     df1 = pd.read_excel(file1)
     df1 = df1.drop_duplicates(subset='email')
