@@ -197,4 +197,35 @@
         });
 
         dropContainer2.addEventListener("dragleave", () => {
-            dropContainer2.style.border
+            dropContainer2.style.border = "2px dashed #ccc";
+        });
+
+        dropContainer1.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropContainer1.style.border = "2px dashed #ccc";
+            const files = e.dataTransfer.files;
+            fileInput1.files = files;
+            updateSelectedFiles1(); // Update selected file names for Container 1
+        });
+
+        dropContainer2.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropContainer2.style.border = "2px dashed #ccc";
+            const files = e.dataTransfer.files;
+            fileInput2.files = files;
+            updateSelectedFiles2(); // Update selected file names for Container 2
+        });
+
+        fileInput1.addEventListener("change", () => {
+            dropContainer1.style.border = "2px dashed #ccc";
+            updateSelectedFiles1(); // Update selected file names for Container 1
+        });
+
+        fileInput2.addEventListener("change", () => {
+            dropContainer2.style.border = "2px dashed #ccc";
+            updateSelectedFiles2(); // Update selected file names for Container 2
+        });
+    </script>
+</body>
+
+</html>
