@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,8 +31,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 400px; /* Adjust the width as needed */
-            height: 300px; /* Adjust the height as needed */
+            width: 400px;
+            height: 300px;
         }
 
         .drop-container {
@@ -70,7 +71,7 @@
             cursor: pointer;
             border-radius: 10px;
             margin-top: 20px;
-            align-self: center; /* Center the button horizontally */
+            align-self: center;
         }
 
         button[type="submit"]:hover {
@@ -81,6 +82,7 @@
             display: flex;
             justify-content: space-between;
         }
+
         .container-left,
         .container-right {
             flex: 1;
@@ -94,33 +96,42 @@
             margin-top: 10px;
             font-weight: bold;
         }
+
         form {
-         text-align: center;
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
     <h1>Data Cleaning Tool</h1>
     <form method="POST" action="/upload" enctype="multipart/form-data">
         <div class="row">
 
-            <div class="container container-left" >
+            <div class="container container-left">
                 <div class="drop-container" id="drop-container">
+                    <p>Main file (All Data)</p>
                     <p>Drag and Drop file 1 here or</p>
                     <p><label class="file-input-label" for="file-input">click to select file 1</label></p>
                     <input type="file" id="file-input" name="file1" class="file-input" multiple>
-                    <div class="selected-files" id="selected-files1"></div> <!-- Display selected file names for Container 1 -->
-                 </div>
+                    <div class="selected-files" id="selected-files1"></div>
+                    <!-- Display selected file names for Container 1 -->
+                </div>
             </div>
             <br>
 
-            <div class="container container-right" >
+            <div class="container container-right">
                 <div class="drop-container" id="drop-container2">
+                    <p>This file email rows will be deleted from the Main file</p>
                     <p>Drag and Drop file 2 here or</p>
                     <p><label class="file-input-label" for="file-input2">click to select file 2</label></p>
                     <input type="file" id="file-input2" name="file2" class="file-input" multiple>
-                    <div class="selected-files" id="selected-files2"></div> <!-- Display selected file names for Container 2 -->
+                    <div class="selected-files" id="selected-files2"></div>
+                    <!-- Display selected file names for Container 2 -->
                 </div>
+            </div>
+            <div>
+                <p>hello</p>
             </div>
         </div>
 
@@ -209,4 +220,5 @@
         });
     </script>
 </body>
+
 </html>
