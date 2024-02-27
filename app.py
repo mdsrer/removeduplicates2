@@ -125,14 +125,14 @@ def remove_invalid_emails(df):
 
 @app.route('/')
 def index():
-    return render_template('index_d.html')
+    return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload():
     file1 = request.files['file1']
 
     if file1.filename == '':
-        return render_template('index_d.html', alert_message="Please select at least 1 file to upload.")
+        return render_template('index.html', alert_message="Please select at least 1 file to upload.")
 
     df1 = read_file(file1)
     df1 = df1.drop_duplicates(subset='email')
